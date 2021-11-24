@@ -11,10 +11,11 @@ import SwiftUI
 struct mapUserLocationView: View {
     
     @StateObject private var viewModel = mapUserLocationViewModel()
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 26.856447, longitude: 80.945655), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+    
     var body: some View {
-        Map(coordinateRegion: $region, showsUserLocation: true)
+        Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
             .ignoresSafeArea()
+            .accentColor(Color(.systemPink))
             .onAppear {
                 viewModel.checkIfLocationServicesIsEnabled()
             }
@@ -29,6 +30,8 @@ struct mapUserLocationView_Previews: PreviewProvider {
 
 
 final class mapUserLocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+    
+    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 26.856447, longitude: 80.945655), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     
     var locationManager: CLLocationManager?
     
@@ -54,7 +57,7 @@ final class mapUserLocationViewModel: NSObject, ObservableObject, CLLocationMana
         case .denied:
             print("You have denied this app location permission. Go into settings to change it.")
         case .authorizedAlways, .authorizedWhenInUse:
-            break
+            region = MKCoordinateRegion(center: locationManager.location!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         @unknown default:
             break
         }
