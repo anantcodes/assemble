@@ -10,9 +10,10 @@ import SwiftUI
 
 struct mapUserLocationView: View {
     
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 26.856447, longitude: 80.945655), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 26.856447, longitude: 80.945655), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     var body: some View {
         Map(coordinateRegion: $region)
+            .ignoresSafeArea()
     }
 }
 
