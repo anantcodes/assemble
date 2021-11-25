@@ -13,7 +13,7 @@ struct locationButtonView: View {
     
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40, longitude: 120), span: MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100))
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottom) {
             Map(coordinateRegion: $region, showsUserLocation: true)
                 .ignoresSafeArea()
                 .tint(.pink)
@@ -21,6 +21,12 @@ struct locationButtonView: View {
             LocationButton(.currentLocation) {
                 print("")
             }
+            .foregroundColor(.white)
+            .cornerRadius(8)
+            .labelStyle(.titleAndIcon)
+            .symbolVariant(.fill)
+            .tint(.pink)
+            .padding(.bottom, 50)
         }
     }
 }
