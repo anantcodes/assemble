@@ -17,6 +17,10 @@ struct locationButtonView: View {
             Map(coordinateRegion: $region, showsUserLocation: true)
                 .ignoresSafeArea()
                 .tint(.pink)
+            
+            LocationButton(.currentLocation) {
+                print("")
+            }
         }
     }
 }
