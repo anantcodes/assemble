@@ -16,6 +16,7 @@ struct locationButtonView: View {
         ZStack {
             Map(coordinateRegion: $region, showsUserLocation: true)
                 .ignoresSafeArea()
+                .tint(.pink)
         }
     }
 }
