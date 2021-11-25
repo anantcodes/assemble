@@ -20,7 +20,7 @@ struct locationButtonView: View {
                 .tint(.pink)
             
             LocationButton(.currentLocation) {
-                print("")
+                viewModel.requestAllowOnceLocationPermission()
             }
             .foregroundColor(.white)
             .cornerRadius(8)
@@ -42,4 +42,29 @@ final class locationButtonViewModel: NSObject, ObservableObject, CLLocationManag
     
     @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40, longitude: 120), span: MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100))
     
+    let locationManager = CLLocationManager()
+    
+    override init() {
+        super.init()
+        locationManager.delegate = self
+    }
+    
+    func requestAllowOnceLocationPermission() {
+        locationManager.requestLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let latestLocation = locations.first else {
+            // show an error
+            return
+        }
+        
+        DispatchQueue.main.async {
+            self.region = MKCoordinateRegion(center: latestLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
 }
