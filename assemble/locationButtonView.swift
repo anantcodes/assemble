@@ -11,10 +11,11 @@ import SwiftUI
 
 struct locationButtonView: View {
     
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40, longitude: 120), span: MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100))
+    @StateObject private var viewModel = locationButtonViewModel()
+    
     var body: some View {
         ZStack(alignment: .bottom) {
-            Map(coordinateRegion: $region, showsUserLocation: true)
+            Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
                 .ignoresSafeArea()
                 .tint(.pink)
             
@@ -35,4 +36,10 @@ struct locationButtonView_Previews: PreviewProvider {
     static var previews: some View {
         locationButtonView()
     }
+}
+
+final class locationButtonViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+    
+    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40, longitude: 120), span: MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100))
+    
 }
