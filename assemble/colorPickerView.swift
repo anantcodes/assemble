@@ -17,8 +17,9 @@ struct colorPickerView: View {
                 .frame(width: 200, height: 200)
                 .padding()
             
-            ColorPicker("Change Circle color", selection: $selectedColor)
-                .padding()
+            Form {
+                ColorPicker("Change Circle color", selection: $selectedColor)
+            }
         }
     }
 }
