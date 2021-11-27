@@ -13,10 +13,14 @@ struct swiftUIForm: View {
     @State private var lastName = ""
     
     var body: some View {
-        Form {
-            TextField("First Name", text: $firstName)
-            TextField("Last Name", text: $lastName)
+        NavigationView {
+            Form {
+                TextField("First Name", text: $firstName)
+                TextField("Last Name", text: $lastName)
+            }
+            .navigationTitle("Account")
         }
+        
     }
 }
 
