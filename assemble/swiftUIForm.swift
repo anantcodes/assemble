@@ -12,6 +12,7 @@ struct swiftUIForm: View {
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var birthdate = Date()
+    @State private var shouldSendNewsletter = false
     
     var body: some View {
         NavigationView {
@@ -21,7 +22,13 @@ struct swiftUIForm: View {
                     TextField("Last Name", text: $lastName)
                     DatePicker("Birthdate", selection: $birthdate, displayedComponents: .date)
                 }
+                
+                Section(header: Text("Actions")) {
+                    Toggle("Send Newsletter", isOn: $shouldSendNewsletter)
+                        .toggleStyle(SwitchToggleStyle(tint: .red))
+                }
             }
+            .accentColor(.red)
             .navigationTitle("Account")
         }
     }
