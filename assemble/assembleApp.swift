@@ -13,6 +13,7 @@ struct assembleApp: App {
         WindowGroup {
             //mapUserLocationView()
             //locationButtonView()
+            //colorPickerView()
             ContentView()
         }
     }
