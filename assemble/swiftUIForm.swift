@@ -11,14 +11,15 @@ struct swiftUIForm: View {
     
     @State private var firstName = ""
     @State private var lastName = ""
+    @State private var birthdate = Date()
     
     var body: some View {
         NavigationView {
             Form {
-                
                 Section(header: Text("Personal Information")) {
                     TextField("First Name", text: $firstName)
                     TextField("Last Name", text: $lastName)
+                    DatePicker("Birthdate", selection: $birthdate, displayedComponents: .date)
                 }
             }
             .navigationTitle("Account")
