@@ -44,9 +44,15 @@ struct swiftUIForm: View {
                     } label: {
                         Image(systemName: "keyboard.chevron.compact.down")
                     }
+                    
+                    Button("Save", action: saveUser)
                 }
             }
         }
+    }
+    
+    func saveUser() {
+        print("User saved")
     }
 }
 
