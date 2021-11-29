@@ -29,6 +29,7 @@ struct swiftUIForm: View {
                         .toggleStyle(SwitchToggleStyle(tint: .red))
                     Stepper("Number of Likes", value: $numberOfLikes, in: 1...100)
                     Text("This video has \(numberOfLikes) likes")
+                    Link("Terms of Service", destination: URL(string: "https://github.com/anantcodes/anantcodes-privacy/blob/main/privacy-policy.md")!)
                 }
             }
             .accentColor(.red)
