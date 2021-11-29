@@ -34,6 +34,9 @@ struct swiftUIForm: View {
             }
             .accentColor(.red)
             .navigationTitle("Account")
+            .onTapGesture {
+                hideKeyboard() // bug before wwdc21
+            }
         }
     }
 }
@@ -43,3 +46,11 @@ struct swiftUIForm_Previews: PreviewProvider {
         swiftUIForm()
     }
 }
+
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+#endif
