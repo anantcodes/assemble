@@ -34,8 +34,17 @@ struct swiftUIForm: View {
             }
             .accentColor(.red)
             .navigationTitle("Account")
-            .onTapGesture {
-                hideKeyboard() // bug before wwdc21
+//            .onTapGesture {
+//                hideKeyboard() // bug before wwdc21
+//            }
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button {
+                        hideKeyboard()
+                    } label: {
+                        Image(systemName: "keyboard.chevron.compact.down")
+                    }
+                }
             }
         }
     }
