@@ -32,7 +32,6 @@ struct swiftUIForm: View {
                     Link("Terms of Service", destination: URL(string: "https://github.com/anantcodes/anantcodes-privacy/blob/main/privacy-policy.md")!)
                 }
             }
-            .accentColor(.red)
             .navigationTitle("Account")
 //            .onTapGesture {
 //                hideKeyboard() // bug before wwdc21
@@ -49,6 +48,7 @@ struct swiftUIForm: View {
                 }
             }
         }
+        .accentColor(.red)
     }
     
     func saveUser() {
