@@ -13,6 +13,7 @@ struct swiftUIForm: View {
     @State private var lastName = ""
     @State private var birthdate = Date()
     @State private var shouldSendNewsletter = false
+    @State private var numberOfLikes = 1
     
     var body: some View {
         NavigationView {
@@ -26,6 +27,7 @@ struct swiftUIForm: View {
                 Section(header: Text("Actions")) {
                     Toggle("Send Newsletter", isOn: $shouldSendNewsletter)
                         .toggleStyle(SwitchToggleStyle(tint: .red))
+                    Stepper("Number of Likes", value: $numberOfLikes, in: 1...100)
                 }
             }
             .accentColor(.red)
