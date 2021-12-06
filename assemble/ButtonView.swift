@@ -14,6 +14,8 @@ struct ButtonView: View {
         } label: {
             Text("Learn More")
         }
+        //.buttonStyle(.borderedProminent)
+        .buttonStyle(.bordered)
     }
 }
 
