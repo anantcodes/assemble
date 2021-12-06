@@ -16,6 +16,8 @@ struct ButtonView: View {
         }
         //.buttonStyle(.borderedProminent)
         .buttonStyle(.bordered)
+       // .buttonBorderShape(.roundedRectangle(radius: 12))
+        .buttonBorderShape(.capsule)
     }
 }
 
