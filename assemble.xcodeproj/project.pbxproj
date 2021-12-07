@@ -13,6 +13,7 @@
 		0E04A2E3274D524800206448 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E04A2E2274D524800206448 /* Preview Assets.xcassets */; };
 		0E12D91C274FFD2900CAB094 /* locationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12D91B274FFD2900CAB094 /* locationButtonView.swift */; };
 		0E19E7FA2750CE27007555D2 /* colorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E19E7F92750CE27007555D2 /* colorPickerView.swift */; };
+		0E51CE29275FA81E008071C5 /* photoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51CE28275FA81E008071C5 /* photoPickerView.swift */; };
 		0E746D5E275E761A0088F5B7 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E746D5D275E761A0088F5B7 /* ButtonView.swift */; };
 		0EE58ECF275215C40086F295 /* swiftUIForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE58ECE275215C40086F295 /* swiftUIForm.swift */; };
 		0EF457CC274E37B000E77558 /* mapUserLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF457CB274E37B000E77558 /* mapUserLocationView.swift */; };
@@ -26,6 +27,7 @@
 		0E04A2E2274D524800206448 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0E12D91B274FFD2900CAB094 /* locationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationButtonView.swift; sourceTree = "<group>"; };
 		0E19E7F92750CE27007555D2 /* colorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorPickerView.swift; sourceTree = "<group>"; };
+		0E51CE28275FA81E008071C5 /* photoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoPickerView.swift; sourceTree = "<group>"; };
 		0E746D5D275E761A0088F5B7 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		0EE58ECE275215C40086F295 /* swiftUIForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftUIForm.swift; sourceTree = "<group>"; };
 		0EF457CB274E37B000E77558 /* mapUserLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapUserLocationView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				0E19E7F92750CE27007555D2 /* colorPickerView.swift */,
 				0EE58ECE275215C40086F295 /* swiftUIForm.swift */,
 				0E746D5D275E761A0088F5B7 /* ButtonView.swift */,
+				0E51CE28275FA81E008071C5 /* photoPickerView.swift */,
 			);
 			path = assemble;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				0EF457CC274E37B000E77558 /* mapUserLocationView.swift in Sources */,
 				0EE58ECF275215C40086F295 /* swiftUIForm.swift in Sources */,
 				0E04A2DE274D524300206448 /* ContentView.swift in Sources */,
+				0E51CE29275FA81E008071C5 /* photoPickerView.swift in Sources */,
 				0E19E7FA2750CE27007555D2 /* colorPickerView.swift in Sources */,
 				0E04A2DC274D524300206448 /* assembleApp.swift in Sources */,
 				0E12D91C274FFD2900CAB094 /* locationButtonView.swift in Sources */,
