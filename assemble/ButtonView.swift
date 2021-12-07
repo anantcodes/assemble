@@ -12,7 +12,8 @@ struct ButtonView: View {
         Button {
             print("Learn More Tapped")
         } label: {
-            Text("Learn More")
+            //Text("Learn More")
+            Label("Learn More",systemImage: "book.fill")
         }
         //.buttonStyle(.borderedProminent)
         .buttonStyle(.bordered)
