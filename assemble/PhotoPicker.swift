@@ -13,6 +13,7 @@ struct PhotoPicker: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
+        picker.delegate = context.coordinator
         picker.allowsEditing = true
         return picker
     }
@@ -40,6 +41,7 @@ struct PhotoPicker: UIViewControllerRepresentable {
             } else {
                 // return an error showing an alert
             }
+            picker.dismiss(animated: true)
         }
     }
 }
