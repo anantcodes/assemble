@@ -14,7 +14,8 @@ struct assembleApp: App {
             //mapUserLocationView()
             //locationButtonView()
             //colorPickerView()
-            ContentView()
+            //ContentView()
+            photoPickerView()
         }
     }
 }
