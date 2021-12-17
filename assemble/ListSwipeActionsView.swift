@@ -17,8 +17,19 @@ struct ListSwipeActionsView: View {
         List {
             ForEach(fruits, id: \.self) {
                 Text($0.capitalized)
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        Button("Archive") {
+                            
+                        }
+                        Button("Save") {
+                            
+                        }
+                        Button("Junk") {
+                            
+                        }
+                    }
             }
-            .onDelete(perform: delete)
+            //.onDelete(perform: delete)
         }
     }
     
