@@ -18,7 +18,12 @@ struct ListSwipeActionsView: View {
             ForEach(fruits, id: \.self) {
                 Text($0.capitalized)
             }
+            .onDelete(perform: delete)
         }
+    }
+    
+    func delete(indexSet: IndexSet) {
+        
     }
 }
 
