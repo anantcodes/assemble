@@ -16,7 +16,7 @@ struct ListSwipeActionsView: View {
     var body: some View {
         List {
             ForEach(fruits, id: \.self) {
-                Text($0)
+                Text($0.capitalized)
             }
         }
     }
