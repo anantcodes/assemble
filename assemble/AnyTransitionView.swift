@@ -62,7 +62,7 @@ struct AnyTransitionView: View {
             
             Text("Click Me!")
                 .onTapGesture {
-                    withAnimation(.easeInOut) {
+                    withAnimation(.easeInOut(duration: 5.0)) {
                         showRectangle.toggle()
                     }
                 }
