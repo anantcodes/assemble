@@ -9,11 +9,22 @@ import SwiftUI
 
 struct RotateViewModifier: ViewModifier {
     
+    let rotation: Double
+    
     func body(content: Content) -> some View {
         content
-            .rotationEffect(Angle(degrees: 45))
+            .rotationEffect(Angle(degrees: rotation))
     }
     
+}
+
+extension AnyTransition {
+    
+    static var rotating: AnyTransition {
+        return AnyTransition.modifier(
+            active: RotateViewModifier(rotation: 180),
+            identity: RotateViewModifier(rotation: 0))
+    }
 }
 
 struct AnyTransitionView: View {
@@ -28,9 +39,9 @@ struct AnyTransitionView: View {
                 RoundedRectangle(cornerRadius: 25)
                     .frame(width: 250, height: 350)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .modifier(RotateViewModifier())
+//                    .modifier(RotateViewModifier())
 //                    .transition(.move(edge: .leading))
-                    .transition(AnyTransition.scale.animation(.easeInOut))
+                    .transition(AnyTransition.rotating.animation(.easeInOut))
             }
             
             
