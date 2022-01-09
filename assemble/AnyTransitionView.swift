@@ -36,6 +36,12 @@ extension AnyTransition {
             identity: RotateViewModifier(rotation: 0))
     }
     
+    static var rotateOn: AnyTransition {
+        return AnyTransition.asymmetric(
+            insertion: .rotating,
+            removal: .move(edge: .leading))
+    }
+    
 }
 
 struct AnyTransitionView: View {
@@ -53,7 +59,8 @@ struct AnyTransitionView: View {
 //                    .modifier(RotateViewModifier())
 //                    .transition(.move(edge: .leading))
 //                    .transition(AnyTransition.rotating.animation(.easeInOut))
-                    .transition(.rotating(rotation: 1080))
+//                    .transition(.rotating(rotation: 1080))
+                    .transition(.rotateOn)
             }
             
             
@@ -62,7 +69,7 @@ struct AnyTransitionView: View {
             
             Text("Click Me!")
                 .onTapGesture {
-                    withAnimation(.easeInOut(duration: 5.0)) {
+                    withAnimation(.easeInOut) {
                         showRectangle.toggle()
                     }
                 }
