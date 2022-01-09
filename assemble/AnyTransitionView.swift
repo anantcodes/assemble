@@ -29,6 +29,13 @@ extension AnyTransition {
             active: RotateViewModifier(rotation: 180),
             identity: RotateViewModifier(rotation: 0))
     }
+    
+    static func rotating(rotation: Double) -> AnyTransition {
+        return AnyTransition.modifier(
+            active: RotateViewModifier(rotation: rotation),
+            identity: RotateViewModifier(rotation: 0))
+    }
+    
 }
 
 struct AnyTransitionView: View {
@@ -45,7 +52,8 @@ struct AnyTransitionView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
 //                    .modifier(RotateViewModifier())
 //                    .transition(.move(edge: .leading))
-                    .transition(AnyTransition.rotating.animation(.easeInOut))
+//                    .transition(AnyTransition.rotating.animation(.easeInOut))
+                    .transition(.rotating(rotation: 1080))
             }
             
             
