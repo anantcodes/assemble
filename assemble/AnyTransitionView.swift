@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct AnyTransitionView: View {
+    
+    @State private var showRectangle: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Spacer()
+            
+            if(showRectangle) {
+                RoundedRectangle(cornerRadius: 25)
+                    .frame(width: 250, height: 350)
+            }
+            
+            
+            
+            Spacer()
+            
+            Text("Click Me!")
+                .onTapGesture {
+                    withAnimation(.easeInOut) {
+                        showRectangle.toggle()
+                    }
+                }
+        }
     }
 }
 
