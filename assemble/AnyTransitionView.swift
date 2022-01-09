@@ -25,7 +25,7 @@ struct RotateViewModifier: ViewModifier {
 extension AnyTransition {
     
     static var rotating: AnyTransition {
-        return AnyTransition.modifier(
+        return AnyTransition.modifier( // can also be written as modifier(
             active: RotateViewModifier(rotation: 180),
             identity: RotateViewModifier(rotation: 0))
     }
