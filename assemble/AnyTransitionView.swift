@@ -17,7 +17,6 @@ struct RotateViewModifier: ViewModifier {
             .offset(
                 x: rotation != 0 ? UIScreen.main.bounds.width : 0,
                 y: rotation != 0 ? UIScreen.main.bounds.height : 0)
-        
     }
     
 }
@@ -62,8 +61,6 @@ struct AnyTransitionView: View {
 //                    .transition(.rotating(rotation: 1080))
                     .transition(.rotateOn)
             }
-            
-            
             
             Spacer()
             
